@@ -18,6 +18,6 @@ router
   .post(updateUser)
   .delete(deleteUser);
 
-router.route("/username/:id").get(findUserById);
+router.route("/id/:id").get(findUserById);
 
 module.exports = router;

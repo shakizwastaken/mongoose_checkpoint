@@ -22,29 +22,27 @@ const db = mongoose.connection;
 
 //on connect event
 db.on("open", () => {
-  //log
-  console.log("database connected successfully");
-
-  //start listening to port
-  app.listen(port, () => {
-    console.log(`live on localhost:${port}`);
-  });
+  console.log("database connected successfully...");
 });
 
+//start listening to port
+app.listen(port, () => {
+  console.log(`live on localhost:${port}`);
+});
 //error handling middleware
 app.use(errorHandler);
 
-//on disconnect event
-db.on("disconnected", () => {
-  console.log("database disconnected");
-});
+// //on disconnect event
+// db.on("disconnected", () => {
+//   console.log("database disconnected");
+// });
 
-//on reconnect event
-db.on("reconnected", () => {
-  console.log("database reconnected");
-});
+// //on reconnect event
+// db.on("reconnected", () => {
+//   console.log("database reconnected");
+// });
 
-//on error event
-db.on("error", (err) => {
-  console.log(err);
-});
+// //on error event
+// db.on("error", (err) => {
+//   console.log(err);
+// });
